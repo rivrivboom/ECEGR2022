@@ -47,9 +47,9 @@ swap:
 	sw		t2, 0(t1)	
 	sw		t0, 4(t1)
 	add 	t1,a0,t1
-	addi	t4,5, s3	
-	addi	t5,7, s2
-	addi 	t6,12, s5
+	addi	t4, zero, 5	
+	addi	t5, a3, 7 
+	add 	t6, t4, t5
 	
 	ret		
 
