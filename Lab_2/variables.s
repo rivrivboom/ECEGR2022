@@ -13,17 +13,17 @@ varE:   .word   0
 main:       # Start of code section
 
     # Read variables from memory to registers (option 1)
-    la  t0, varA        # Load A
-    lw  s0, 0(t0)
+    #la  t0, varA        # Load A
+    #lw  s0, 0(t0)
 
-    la  t0, varB        # Load B
-    lw  s1, 0(t0)
+    #la  t0, varB        # Load B
+    #lw  s1, 0(t0)
 
-    la  t0, varC        # Load C
-    lw  s2, 0(t0)
+    #la  t0, varC        # Load C
+    #lw  s2, 0(t0)
 
-    la  t0, varD        # Load D
-    lw  s3, 0(t0)
+    #la  t0, varD        # Load D
+    #lw  s3, 0(t0)
 
     
     # Read variables from memory to registers (option 2)
