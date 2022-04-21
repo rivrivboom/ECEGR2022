@@ -16,27 +16,29 @@ size: .word 5
  	li, a3, 0
  	li, s8, 0
  	li, a5, 5
- 	li, t1, 1
+ 	li, t1, 0
+	 	
  	
- 	
- 		add t6, a3, a3
- 	loop1: slti t6, s8, 5
- 		beq t6, a3, loop2
+ 		add t0, s8, s8
+ 	loop1:	
+ 		slti t1, a3, 5
+ 		beqz t1, loop2
  		slli, t2, a3, 2
  		add s10, a0, t2
- 		lw s1,0(a0)
+ 		lw s1,0(s10)
  		add s11, a1, t2
  		lw s2, 0(a1)
  		add s1 ,s1, s11
  		sw s11, 0(a0)
  		
- 		add a3, a3, t1
- 		jal a3, loop1 		
+ 		addi a3, a3, 1
+ 		#sub t6,t6,t6
+ 		jal s8, loop1 		
  	loop2: 
- 		j end
+ 		
  		
  	end:
  		li a7,10
  		
- 	ecall
+ 		ecall
  		
