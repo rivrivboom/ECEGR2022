@@ -1,0 +1,36 @@
+.data
+B : .word 0 1 2 4 8 16
+A: .word 0 0 0 0 0
+size: .word 5
+
+.text
+
+
+ main:
+ 	
+ 	
+ 		
+ 	
+ 	la a0, A
+ 	la a1, B
+ 	li, a3, 0
+ 	li, a5, 5
+ 	li, t1, 1
+ 	
+ 	
+ 		add t6, a3, a3
+ 	loop1: stli t6, a3, a5
+ 		beq t6, a3, loop2
+ 		lw s9, 0(t0)
+ 		lw s10, 0(t1)
+ 		beq t6, a3, end
+ 		slli 
+ 		lw a3, (a0)
+ 		lw , (a3)
+ 		lw a0, (a3)
+ 		add 
+ 		
+ 		add a3, a3, t1
+ 		
+ 	loop2: 
+ 		
