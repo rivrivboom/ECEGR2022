@@ -1,7 +1,7 @@
 .data
 B : .word 0, 1, 2, 4, 8, 16
 A: .word 0, 0, 0, 0, 0, 0
-size: .word 5
+
 
 .text
 
