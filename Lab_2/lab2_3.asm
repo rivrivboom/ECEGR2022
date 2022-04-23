@@ -32,6 +32,8 @@ Z: .word 2
  	return:
  		add  t4,t4,s2
  		add t3,t3,s2
+		sw t4, Z, s9
+		sw t3, I, s9
  	li a7, 10
  	ecall
  		
