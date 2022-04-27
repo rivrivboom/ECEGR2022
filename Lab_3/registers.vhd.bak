@@ -73,9 +73,7 @@ architecture memmy of register8 is
 		 	 bitout: out std_logic);
 	end component;
 begin
-	reg8: for i in 7 downto 0 generate
-		reg: bitstorage port map(datain(i), enout, writein, dataout(i));
-	end generate
+	-- insert your code here.
 end architecture memmy;
 
 --------------------------------------------------------------------------------
@@ -92,18 +90,10 @@ entity register32 is
 end entity register32;
 
 architecture biggermem of register32 is
-	component register8
-		port(datain: in std_logic_vector(7 downto 0);
-	     		enout:  in std_logic;
-	     		writein: in std_logic;
-	     		dataout: out std_logic_vector(7 downto 0));
-	end component;
 	-- hint: you'll want to put register8 as a component here 
 	-- so you can use it below
 begin
-	reg32: for i in 32 downto 0 generate
-		reg: register8 port map(datain(i), enout32, enout16, enout8, writein, dataout(i));
-	end generate
+	-- insert code here.
 end architecture biggermem;
 
 --------------------------------------------------------------------------------
