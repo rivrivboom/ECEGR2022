@@ -1,0 +1,31 @@
+{C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd} {0 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity bitstorage
+-- Compiling architecture memlike of bitstorage
+-- Compiling entity fulladder
+-- Compiling architecture addlike of fulladder
+-- Compiling entity register8
+-- Compiling architecture memmy of register8
+** Error: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(79): near "end": (vcom-1576) expecting ';'.
+** Error: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(87): near "is": (vcom-1576) expecting ';'.
+** Error: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(91): near "out": syntax error
+** Note: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(92): VHDL Compiler exiting
+
+} {15.0 18.0} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity testreg_vhd
+-- Compiling architecture behavior of testreg_vhd
+
+} {} {}}
