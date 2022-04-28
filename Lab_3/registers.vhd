@@ -75,7 +75,7 @@ architecture memmy of register8 is
 begin
 	reg8: for i in 7 downto 0 generate
 		reg: bitstorage port map(datain(i), enout, writein, dataout(i));
-	end generate
+	end generate;
 end architecture memmy;
 
 --------------------------------------------------------------------------------
@@ -101,9 +101,12 @@ architecture biggermem of register32 is
 	-- hint: you'll want to put register8 as a component here 
 	-- so you can use it below
 begin
-	reg32: for i in 32 downto 0 generate
-		reg: register8 port map(datain(i), enout32, enout16, enout8, writein, dataout(i));
-	end generate
+	reg32: register8 (datain(31 downto 24), enout32, writein32, dataout(31 downto 24));
+	reg24: register8 (datain(23 downto 16), enout32, writein32, dataout(23 downto 16));
+	reg16: register8 (datain (15 downto 8), enout16, writein16, dataout(15 downto 8));
+	reg8: register8 (datain (7 downto 0), enout8, writein8, dataout(7 downto 0));
+
+	
 end architecture biggermem;
 
 --------------------------------------------------------------------------------
