@@ -10,6 +10,7 @@ R0
 R0
 R0
 R0
+R0
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -19,16 +20,15 @@ R0
 cModel Technology
 Z1 dC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_1
 T_opt
-!s110 1652058867
-V7o<E51LCOVJbD`5i72I>j2
+!s110 1652061157
+VjfOVbb^^YmH0PWY90<jbR2
 Z2 04 11 8 work testreg_vhd behavior 1
-=1-005056b3c8e0-62786af2-4f-a28
+=1-005056b3c8e0-627873e3-200-24ac
 Z3 !s124 OEM100
 Z4 o-quiet -auto_acc_if_foreign -work work
 Z5 tCvgOpt 0
 n@_opt
 Z6 OL;O;2021.2;73
-R1
 T_opt1
 !s110 1652060442
 VO?cj:BKzFIcgGOWAF_;WO0
@@ -88,12 +88,12 @@ R9
 R10
 R11
 R12
-Z23 DEx4 work 16 adder_subtracter 0 22 GlR1iLY2k;Z=O7YlKBKMH2
+DEx4 work 16 adder_subtracter 0 22 GlR1iLY2k;Z=O7YlKBKMH2
 !i122 49
 l155
-Z24 L144 24
-Z25 Vlk3NgO7PQXd`7Z@ld9_WZ0
-Z26 !s100 C=FL_TaKlB=Ge?@;<HbFa1
+L144 24
+Vlk3NgO7PQXd`7Z@ld9_WZ0
+!s100 C=FL_TaKlB=Ge?@;<HbFa1
 R16
 32
 R17
@@ -116,7 +116,7 @@ R13
 R14
 R15
 l0
-Z27 L12 1
+Z23 L12 1
 VdCGWj`@VbHgV172Jg^EQX1
 !s100 WJnIlGlmDL72kEaZWY7LI2
 R16
@@ -135,12 +135,12 @@ R9
 R10
 R11
 R12
-Z28 DEx4 work 10 bitstorage 0 22 dCGWj`@VbHgV172Jg^EQX1
+DEx4 work 10 bitstorage 0 22 dCGWj`@VbHgV172Jg^EQX1
 !i122 49
 l21
-Z29 L19 13
-Z30 V<KY=mN>W^6@>cW`V]6Y^Y2
-Z31 !s100 >C<lEnBjkno6BlaBg7zNz3
+L19 13
+V<KY=mN>W^6@>cW`V]6Y^Y2
+!s100 >C<lEnBjkno6BlaBg7zNz3
 R16
 32
 R17
@@ -182,12 +182,12 @@ R9
 R10
 R11
 R12
-Z32 DEx4 work 9 fulladder 0 22 =FPW_d1N0HAmBXP_4FHUj0
+DEx4 work 9 fulladder 0 22 =FPW_d1N0HAmBXP_4FHUj0
 !i122 49
 l49
-Z33 L48 5
-Z34 VYAZhA1hLlNW^KgldE^3f01
-Z35 !s100 <Eni[?PWcgZ?5R]=[zAgg3
+L48 5
+VYAZhA1hLlNW^KgldE^3f01
+!s100 <Eni[?PWcgZ?5R]=[zAgg3
 R16
 32
 R17
@@ -229,10 +229,10 @@ R9
 R10
 R11
 R12
-Z36 DEx4 work 10 register32 0 22 K]QHhNo@NK6_6Ta3L5?`F3
+DEx4 work 10 register32 0 22 K]QHhNo@NK6_6Ta3L5?`F3
 !i122 49
 l107
-Z37 L94 35
+L94 35
 V2zWWXz5_CEh7SiV;X6Cc42
 !s100 j_d^m4nQ5WOZ6X384la9g1
 R16
@@ -276,12 +276,12 @@ R9
 R10
 R11
 R12
-Z38 DEx4 work 9 register8 0 22 CmLjgjT4F;9OEK[DbRco72
+DEx4 work 9 register8 0 22 CmLjgjT4F;9OEK[DbRco72
 !i122 49
 l75
-Z39 L68 12
-Z40 VB@4F3`2GU1RKi7c`]fm1:1
-Z41 !s100 baBS]VIf;cb<I?j3Dm;153
+L68 12
+VB@4F3`2GU1RKi7c`]fm1:1
+!s100 baBS]VIf;cb<I?j3Dm;153
 R16
 32
 R17
@@ -323,12 +323,12 @@ R9
 R10
 R11
 R12
-Z42 DEx4 work 14 shift_register 0 22 B3n<><7[_zg32G0jZF6>91
+DEx4 work 14 shift_register 0 22 B3n<><7[_zg32G0jZF6>91
 !i122 49
 l184
-Z43 L182 12
-Z44 VVZCT5d=LDWRjPkC`:onE62
-Z45 !s100 MBA6EOL=1hN_Oal:gmaMC1
+L182 12
+VVZCT5d=LDWRjPkC`:onE62
+!s100 MBA6EOL=1hN_Oal:gmaMC1
 R16
 32
 R17
@@ -340,7 +340,7 @@ R20
 R21
 R22
 Etestreg_vhd
-Z46 w1650474405
+Z24 w1650474405
 R10
 R8
 R9
@@ -348,19 +348,19 @@ R11
 R12
 !i122 11
 R13
-Z47 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
-Z48 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
+Z25 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
+Z26 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
 l0
-R27
+R23
 ViXoQXl2a;kM[chQ:j@fB?1
 !s100 [FQ?dzLOmOKmXoOC5VXHN0
 R16
 32
-Z49 !s110 1651101929
+Z27 !s110 1651101929
 !i10b 1
-Z50 !s108 1651101929.000000
-Z51 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
-Z52 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
+Z28 !s108 1651101929.000000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
+Z30 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
 !i113 0
 R21
 R22
@@ -378,11 +378,11 @@ VkbOe39?Vb]5;FNY]5>AO41
 !s100 zdoKYizBG:HDl<[>DIJn_0
 R16
 32
-R49
+R27
 !i10b 1
-R50
-R51
-R52
+R28
+R29
+R30
 !i113 0
 R21
 R22
