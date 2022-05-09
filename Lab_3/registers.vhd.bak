@@ -116,7 +116,7 @@ begin
 	with writinM select
 		writinS <= "0001" when "001",
 			"0011" when "010",
-			"1111" when "011",
+			"1111" when "100",
 			"0000" when others;
 
 	reg32: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));

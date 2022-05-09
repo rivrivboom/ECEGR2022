@@ -119,10 +119,10 @@ begin
 			"1111" when "100",
 			"0000" when others;
 
-	reg32: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));
-	reg24: register8 PORT MAP (datain(23 downto 16), enableoutS(2), writinS(2), dataout(23 downto 16));
-	reg16: register8 PORT MAP (datain(15 downto 8), enableoutS(1), writinS(1), dataout(15 downto 8));
-	regB: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
+	reg4: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));
+	reg3: register8 PORT MAP (datain(23 downto 16), enableoutS(2), writinS(2), dataout(23 downto 16));
+	reg2: register8 PORT MAP (datain(15 downto 8), enableoutS(1), writinS(1), dataout(15 downto 8));
+	reg1: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
 
 	
 end architecture biggermem;
