@@ -73,8 +73,8 @@ architecture memmy of register8 is
 		 	 bitout: out std_logic);
 	end component;
 begin
-	bits8: for i in 7 downto 0 generate
-		biti: bitstorage port map(datain(i), enout, writein, dataout(i));
+	reg8: for i in 7 downto 0 generate
+		reg: bitstorage port map(datain(i), enout, writein, dataout(i));
 	end generate;
 end architecture memmy;
 
@@ -98,31 +98,28 @@ architecture biggermem of register32 is
 	     		writein: in std_logic;
 	     		dataout: out std_logic_vector(7 downto 0));
 	end component;
-	signal enableM: std_logic_vector(2 downto 0);
-	signal writinM: std_logic_vector(2 downto 0);
-	signal enableoutS: std_logic_vector(3 downto 0);
-	signal writinS: std_logic_vector(3 downto 0);
+
+	signal enableoutS: std_logic_vector(3 downto 0):= "0000";
+	signal writinS: std_logic_vector(3 downto 0) := "0000";
 	-- hint: you'll want to put register8 as a component here 
 	-- so you can use it below
 begin
-	enableM <= enout32 & enout16 & enout8;
-	writinM <= writein32 & writein16 & writein8;
+	enableoutS <= (others => '0') 	when enout32 = '0' else
+		(3 downto 2 => '1', others => '0')
+	when enout16 = '0' else
+		(3 downto 1 => '1', others => '0')
+	when enout8 = '0' else
+		(others => '1');
+	writinS <= (others => '1')
+	when writein32 = '1' else
+		(3 downto 2 => '0', others => '1')
+	when writein16 = '1' else
+		(3 downto 1 => '0', others => '1')
+	when writein8 = '1' else
+		(others => '0');
+	reg32: for i in 3 downto 0 generate
+		regi: registers port map (datain((i*8-1) downto ((i-1)*8)), enableoutS(i-1), writinS(i-1), dataout((i*8-1) downto ((i-1)*8)));
 
-	with enableM select
-		enableoutS <= "1110" when "110",
-			"1100" when "101",
-			"0000" when "011",
-			"1111" when others;
-	with writinM select
-		writinS <= "0001" when "001",
-			"0011" when "010",
-			"1111" when "100",
-			"0000" when others;
-
-	reg32: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));
-	reg24: register8 PORT MAP (datain(23 downto 16), enableoutS(2), writinS(2), dataout(23 downto 16));
-	reg16: register8 PORT MAP (datain(15 downto 8), enableoutS(1), writinS(1), dataout(15 downto 8));
-	regB: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
 
 	
 end architecture biggermem;
