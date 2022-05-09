@@ -118,7 +118,7 @@ begin
 	when writein8 = '1' else
 		(others => '0');
 	reg32: for i in 4 downto 1 generate
-		regi: register8 port map (datain(((i*8)-1) downto ((i-1)*8)), enableoutS(i-1), writinS(i-1), dataout(((i*8)-1) downto ((i-1)*8)));
+		regi: register8 port map (datain((i*8-1) downto ((i-1)*8)), enableoutS(i-1), writinS(i-1), dataout((i*8-1) downto ((i-1)*8)));
 
 	end generate;
 
@@ -151,15 +151,13 @@ architecture calc of adder_subtracter is
 	signal temp: std_logic_vector(31 downto 0);
 	signal C: std_logic_vector(32 downto 0);
 begin
-	C(0) <= add_sub;
-	co <= C(32);
-
-	with add_sub select
-		temp <= datain_b when'0', 
-			not datain_b when others;
-	adder0: fulladder PORT MAP (datain_a(0), temp(0), C(0), dataout(0), C(1));
-	Adders: for i in 31 downto 1 generate
-	adder1: fulladder PORT MAP (datain_a(i), temp(i), C(i), dataout(i), C(i+1));
+	C(0) <= '1' when add_sub = '1' else '0';
+	temp <= not datain_b when add_sub = '1' else datain_b;
+	co <= C(31);
+	
+	
+	Adder32: for i in 31 downto 0 generate
+		adder1: fulladder PORT MAP (datain_a(i), temp(i), C(i), dataout(i), C(i+1));
 	end generate;
 
 end architecture calc;
@@ -180,14 +178,14 @@ end entity shift_register;
 architecture shifter of shift_register is
 	
 begin
-	with dir & shamt (1 downto 0) select
-		dataout <= datain(30 downto 0) & '0' when "001",
-			'0' & datain(31 downto 1) when "101",
-			datain(29 downto 0) & "00" when "010",
-			"00" & datain(31 downto 2) when "110",
-			datain(28 downto 0) & "000" when "011",
-			"000" & datain(31downto 3) when "111",
-			datain when others;
+	--with dir & shamt (1 downto 0) select
+		dataout <= datain(30 downto 0) & '0') when (dir = '0' and shamt = "00001") else
+			(datain(29 downto 0) & "00") when (dir = '0' and shamt = "00010") else
+			(datain(28 downto 0) & "000") when (dir = '0' and shamt = "00011") else
+			('0' & datain(31 downto 1)) when (dir = '1' and shamt = "00001") else 
+			("00" & datain(31 downto 2)) when (dir = '1' and shamt = "00010") else
+			("000" & datain(31 downto 3)) when (dir = '1' and shamt = "00011") else 
+			datain;
 end architecture shifter;
 
 
