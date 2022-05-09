@@ -73,7 +73,7 @@ architecture memmy of register8 is
 		 	 bitout: out std_logic);
 	end component;
 begin
-	reg8: for i in 7 downto 0 generate
+	bits8: for i in 7 downto 0 generate
 		biti: bitstorage port map(datain(i), enout, writein, dataout(i));
 	end generate;
 end architecture memmy;
@@ -122,7 +122,7 @@ begin
 	reg32: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));
 	reg24: register8 PORT MAP (datain(23 downto 16), enableoutS(2), writinS(2), dataout(23 downto 16));
 	reg16: register8 PORT MAP (datain(15 downto 8), enableoutS(1), writinS(1), dataout(15 downto 8));
-	reg8: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
+	regB: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
 
 	
 end architecture biggermem;
