@@ -9,7 +9,6 @@ USE ieee.std_logic_unsigned.all;
 USE ieee.numeric_std.ALL;
 
 ENTITY testreg_vhd IS
-	
 END testreg_vhd;
 
 ARCHITECTURE behavior OF testreg_vhd IS 
