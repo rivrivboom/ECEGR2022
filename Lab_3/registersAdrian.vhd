@@ -118,7 +118,7 @@ begin
 	when writein8 = '1' else
 		(others => '0');
 	reg32: for i in 4 downto 1 generate
-		regi: registers port map (datain((i*8-1) downto ((i-1)*8)), enableoutS(i-1), writinS(i-1), dataout((i*8-1) downto ((i-1)*8)));
+		regi: register8 port map (datain((i*8-1) downto ((i-1)*8)), enableoutS(i-1), writinS(i-1), dataout((i*8-1) downto ((i-1)*8)));
 
 	end generate;
 
