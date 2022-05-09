@@ -74,7 +74,7 @@ architecture memmy of register8 is
 	end component;
 begin
 	reg8: for i in 7 downto 0 generate
-		reg: bitstorage port map(datain(i), enout, writein, dataout(i));
+		biti: bitstorage port map(datain(i), enout, writein, dataout(i));
 	end generate;
 end architecture memmy;
 
@@ -98,13 +98,31 @@ architecture biggermem of register32 is
 	     		writein: in std_logic;
 	     		dataout: out std_logic_vector(7 downto 0));
 	end component;
+	signal enableM: std_logic_vector(2 downto 0);
+	signal writinM: std_logic_vector(2 downto 0);
+	signal enableoutS: std_logic_vector(3 downto 0);
+	signal writinS: std_logic_vector(3 downto 0);
 	-- hint: you'll want to put register8 as a component here 
 	-- so you can use it below
 begin
-	reg32: register8 (datain(31 downto 24), enout32, writein32, dataout(31 downto 24));
-	reg24: register8 (datain(23 downto 16), enout32, writein32, dataout(23 downto 16));
-	reg16: register8 (datain (15 downto 8), enout16, writein16, dataout(15 downto 8));
-	reg8: register8 (datain (7 downto 0), enout8, writein8, dataout(7 downto 0));
+	enableM <= enout32 & enout16 & enout8;
+	writinM <= writein32 & writein16 & writein8;
+
+	with enableM select
+		enableoutS <= "1110" when "110",
+			"1100" when "101",
+			"0000" when "011",
+			"1111" when others;
+	with writinM select
+		writinS <= "0001" when "001",
+			"0011" when "010",
+			"1111" when "011",
+			"0000" when others;
+
+	reg32: register8 PORT MAP (datain(31 downto 24), enableoutS(3), writinS(3), dataout(31 downto 24));
+	reg24: register8 PORT MAP (datain(23 downto 16), enableoutS(2), writinS(2), dataout(23 downto 16));
+	reg16: register8 PORT MAP (datain(15 downto 8), enableoutS(1), writinS(1), dataout(15 downto 8));
+	regB: register8 PORT MAP (datain(7 downto 0), enableoutS(0), writinS(0), dataout(7 downto 0));
 
 	
 end architecture biggermem;
@@ -124,9 +142,28 @@ entity adder_subtracter is
 end entity adder_subtracter;
 
 architecture calc of adder_subtracter is
-
+	component fulladder
+	port (a: in std_logic;
+		b: in std_logic;
+		cin: in std_logic;
+		sum: out std_logic;
+		carry: out std_logic
+		);
+	end component;
+	signal temp: std_logic_vector(31 downto 0);
+	signal C: std_logic_vector(32 downto 0);
 begin
-	-- insert code here.
+	C(0) <= add_sub;
+	co <= C(32);
+
+	with add_sub select
+		temp <= datain_b when'0', 
+			not datain_b when others;
+	adder0: fulladder PORT MAP (datain_a(0), temp(0), C(0), dataout(0), C(1));
+	Adders: for i in 31 downto 1 generate
+	adder1: fulladder PORT MAP (datain_a(i), temp(i), C(i), dataout(i), C(i+1));
+	end generate;
+
 end architecture calc;
 
 --------------------------------------------------------------------------------
@@ -145,7 +182,14 @@ end entity shift_register;
 architecture shifter of shift_register is
 	
 begin
-	-- insert code here.
+	with dir & shamt (1 downto 0) select
+		dataout <= datain(30 downto 0) & '0' when "001",
+			'0' & datain(31 downto 1) when "101",
+			datain(29 downto 0) & "00" when "010",
+			"00" & datain(31 downto 2) when "110",
+			datain(28 downto 0) & "000" when "011",
+			"000" & datain(31downto 3) when "111",
+			datain when others;
 end architecture shifter;
 
 
