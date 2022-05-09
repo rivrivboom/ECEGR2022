@@ -149,15 +149,15 @@ architecture calc of adder_subtracter is
 		);
 	end component;
 	signal temp: std_logic_vector(31 downto 0);
-	signal c: std_logic_vector(32 downto 0);
+	signal C: std_logic_vector(32 downto 0);
 begin
-	c(0) <= '1' when add_sub = '1' else '0';
+	C(0) <= '1' when add_sub = '1' else '0';
 	temp <= not datain_b when add_sub = '1' else datain_b;
-	co <= c(31);
+	co <= C(31);
 	
-	--adder0: fulladder PORT MAP (datain_a(0), temp(0), C(0), dataout(0), C(1));
+	
 	Adder32: for i in 31 downto 0 generate
-		adder1: fulladder PORT MAP (datain_a(i), temp(i), c(i), dataout(i), c(i+1));
+		adder1: fulladder PORT MAP (datain_a(i), temp(i), C(i), dataout(i), C(i+1));
 	end generate;
 
 end architecture calc;
