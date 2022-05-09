@@ -21,15 +21,4 @@ Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 ** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(183): (vcom-1014) Array type selected signal assignment expression must be of a locally static subtype.
 ** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd(189): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 
-} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd}
-Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Compiling entity testreg_vhd
--- Compiling architecture behavior of testreg_vhd
-
 } {} {}}
