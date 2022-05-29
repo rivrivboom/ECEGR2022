@@ -51,7 +51,7 @@ begin
 
 	ALUResult <= immidiate_val;
 	with immidiate_val select
-		Zero <= '1' when x"00000000",
+		Zero <= '1' when x"0000000",
 		'0' when others;
 
 end architecture ALU_Arch;

@@ -73,7 +73,7 @@ Z8 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z9 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z11 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 77
+!i122 78
 Z12 dC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3
 Z13 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd
 Z14 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd
@@ -83,9 +83,9 @@ VjBP918Fj[8Kz3;enV;_=50
 !s100 >6ZUbO[0ZRAL^@_OzzEK=1
 Z15 OL;C;2021.2;73
 32
-Z16 !s110 1652130392
+Z16 !s110 1653855324
 !i10b 1
-Z17 !s108 1652130392.000000
+Z17 !s108 1653855323.000000
 Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd|
 Z19 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd|
 !i113 0
@@ -97,12 +97,12 @@ R8
 R9
 R10
 R11
-Z22 DEx4 work 16 adder_subtracter 0 22 jBP918Fj[8Kz3;enV;_=50
-!i122 77
+DEx4 work 16 adder_subtracter 0 22 jBP918Fj[8Kz3;enV;_=50
+!i122 78
 l153
-Z23 L142 22
-Z24 V_`JjLQFNYY8gUAo@5z5oJ1
-Z25 !s100 j:6]?AjQUlgU7GOFh1[Tf0
+L142 22
+V_`JjLQFNYY8gUAo@5z5oJ1
+!s100 j:6]?AjQUlgU7GOFh1[Tf0
 R15
 32
 R16
@@ -113,6 +113,53 @@ R19
 !i113 0
 R20
 R21
+Ealu
+Z22 w1653855583
+R7
+R8
+R9
+R10
+R11
+!i122 82
+R12
+Z23 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd
+Z24 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd
+l0
+Z25 L12 1
+V4:GEf6NeMCTYXXjWbC?Xk0
+!s100 KchH19m_<W<oUzZb`NQV=3
+R15
+32
+Z26 !s110 1653855589
+!i10b 1
+Z27 !s108 1653855589.000000
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd|
+!s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd|
+!i113 0
+R20
+R21
+Aalu_arch
+R7
+R8
+R9
+R10
+R11
+DEx4 work 3 alu 0 22 4:GEf6NeMCTYXXjWbC?Xk0
+!i122 82
+l40
+L20 38
+VBF3AFj7emmY;^?jWmjEm72
+!s100 2CC8c3]H>8?d:]Il]Dm_93
+R15
+32
+R26
+!i10b 1
+R27
+R28
+Z29 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd|
+!i113 0
+R20
+R21
 Ebitstorage
 R6
 R7
@@ -120,12 +167,12 @@ R8
 R9
 R10
 R11
-!i122 77
+!i122 78
 R12
 R13
 R14
 l0
-L12 1
+R25
 VdCGWj`@VbHgV172Jg^EQX1
 !s100 WJnIlGlmDL72kEaZWY7LI2
 R15
@@ -144,12 +191,12 @@ R8
 R9
 R10
 R11
-Z26 DEx4 work 10 bitstorage 0 22 dCGWj`@VbHgV172Jg^EQX1
-!i122 77
+DEx4 work 10 bitstorage 0 22 dCGWj`@VbHgV172Jg^EQX1
+!i122 78
 l21
-Z27 L19 13
-Z28 V<KY=mN>W^6@>cW`V]6Y^Y2
-Z29 !s100 >C<lEnBjkno6BlaBg7zNz3
+L19 13
+V<KY=mN>W^6@>cW`V]6Y^Y2
+!s100 >C<lEnBjkno6BlaBg7zNz3
 R15
 32
 R16
@@ -167,7 +214,7 @@ R8
 R9
 R10
 R11
-!i122 77
+!i122 78
 R12
 R13
 R14
@@ -191,12 +238,12 @@ R8
 R9
 R10
 R11
-Z30 DEx4 work 9 fulladder 0 22 =FPW_d1N0HAmBXP_4FHUj0
-!i122 77
+DEx4 work 9 fulladder 0 22 =FPW_d1N0HAmBXP_4FHUj0
+!i122 78
 l49
-Z31 L48 5
-Z32 VYAZhA1hLlNW^KgldE^3f01
-Z33 !s100 <Eni[?PWcgZ?5R]=[zAgg3
+L48 5
+VYAZhA1hLlNW^KgldE^3f01
+!s100 <Eni[?PWcgZ?5R]=[zAgg3
 R15
 32
 R16
@@ -214,7 +261,7 @@ R8
 R9
 R10
 R11
-!i122 77
+!i122 78
 R12
 R13
 R14
@@ -238,12 +285,12 @@ R8
 R9
 R10
 R11
-Z34 DEx4 work 10 register32 0 22 K]QHhNo@NK6_6Ta3L5?`F3
-!i122 77
+DEx4 work 10 register32 0 22 K]QHhNo@NK6_6Ta3L5?`F3
+!i122 78
 l106
-Z35 L94 33
-Z36 V<YbW?7;E@=Com[6LM9f_P2
-Z37 !s100 V[bDzB06doP8Sg6167@FQ3
+L94 33
+V<YbW?7;E@=Com[6LM9f_P2
+!s100 V[bDzB06doP8Sg6167@FQ3
 R15
 32
 R16
@@ -261,7 +308,7 @@ R8
 R9
 R10
 R11
-!i122 77
+!i122 78
 R12
 R13
 R14
@@ -285,12 +332,12 @@ R8
 R9
 R10
 R11
-Z38 DEx4 work 9 register8 0 22 CmLjgjT4F;9OEK[DbRco72
-!i122 77
+DEx4 work 9 register8 0 22 CmLjgjT4F;9OEK[DbRco72
+!i122 78
 l75
-Z39 L68 12
-Z40 VmH6>^fR;T@7FJGeUUdLUg0
-Z41 !s100 iIdkBKefEi5;mimLoP<G13
+L68 12
+VmH6>^fR;T@7FJGeUUdLUg0
+!s100 iIdkBKefEi5;mimLoP<G13
 R15
 32
 R16
@@ -308,7 +355,7 @@ R8
 R9
 R10
 R11
-!i122 77
+!i122 78
 R12
 R13
 R14
@@ -332,8 +379,8 @@ R8
 R9
 R10
 R11
-Z42 DEx4 work 14 shift_register 0 22 oLeHgmz]zhnSodeZ<z4WA3
-!i122 77
+DEx4 work 14 shift_register 0 22 oLeHgmz]zhnSodeZ<z4WA3
+!i122 78
 l180
 L178 11
 VCI>MIAS:jISWLf@g=[2C>1
@@ -348,8 +395,55 @@ R19
 !i113 0
 R20
 R21
+Etestalu_vhd
+Z30 w1653685812
+R9
+R7
+R8
+R10
+R11
+!i122 80
+R12
+Z31 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd
+Z32 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd
+l0
+Z33 L11 1
+VY]f:i7kbzg[>3;WC@NaMX1
+!s100 R@FPf6HaOUd?f1KE>5<c50
+R15
+32
+Z34 !s110 1653855325
+!i10b 1
+Z35 !s108 1653855324.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd|
+Z37 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd|
+!i113 0
+R20
+R21
+Abehavior
+R9
+R7
+R8
+R10
+R11
+DEx4 work 11 testalu_vhd 0 22 Y]f:i7kbzg[>3;WC@NaMX1
+!i122 80
+l34
+L14 51
+VAHgKIA^D?ODVOZB;z2WEW3
+!s100 Q[nFHHV@P]o<CRmdz4zJ03
+R15
+32
+R34
+!i10b 1
+R35
+R36
+R37
+!i113 0
+R20
+R21
 Etestreg_vhd
-Z43 w1652119581
+Z38 w1652119581
 R9
 R7
 R8
@@ -357,19 +451,19 @@ R10
 R11
 !i122 75
 R12
-Z44 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
-Z45 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
+Z39 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
+Z40 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd
 l0
-L11 1
+R33
 V;9L5GL6z>AFg:Vcc6J=?93
 !s100 <O_P7j]2]?ZF`2`5?MP:;2
 R15
 32
-Z46 !s110 1652129981
+Z41 !s110 1652129981
 !i10b 1
-Z47 !s108 1652129981.000000
-Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
-Z49 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
+Z42 !s108 1652129981.000000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
+Z44 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/tregisterswclues.vhd|
 !i113 0
 R20
 R21
@@ -387,11 +481,11 @@ Vb5S1EbZ6_EI;KHle_EW]F2
 !s100 ?HUOQ<=_hl1F7XaFIH9O=0
 R15
 32
-R46
+R41
 !i10b 1
-R47
-R48
-R49
+R42
+R43
+R44
 !i113 0
 R20
 R21
