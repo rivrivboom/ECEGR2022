@@ -68,7 +68,9 @@ BEGIN
 		control <= "00110";
 		wait for 100ns;
 
-		
+		datain_b <= x"FEFEFEFE";
+		control <= 
+
 		-- Add test cases here to drive the ALU implementation
 
 

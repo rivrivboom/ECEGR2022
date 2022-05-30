@@ -57,7 +57,7 @@ BEGIN
 			 			-- result = 0x124578AB  and zeroOut = 0
 
 		control <= "10010";
-		wait 100ns;
+		wait for 100ns;
 		
 		datain_a <= x"01234567";
 		datain_b <= x"11223344";
@@ -69,8 +69,14 @@ BEGIN
 		wait for 100ns;
 
 		datain_b <= x"FEFEFEFE";
-		control <= 
+		control <= "00000";
+		wait for 100ns;
 
+
+		control <= "10000";
+		wait for 100ns;
+
+		
 		-- Add test cases here to drive the ALU implementation
 
 
