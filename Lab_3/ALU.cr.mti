@@ -19,15 +19,27 @@ Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity shift_register
 -- Compiling architecture shifter of shift_register
 
-} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd}
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd} {2 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd}
 Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package NUMERIC_STD
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
--- Compiling entity ALU
--- Compiling architecture ALU_Arch of ALU
+-- Loading package NUMERIC_STD
+-- Compiling entity testALU_vhd
+-- Compiling architecture behavior of testALU_vhd
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(60): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(65): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(69): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(73): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(77): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(82): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(85): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(90): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(93): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(96): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(99): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/tALU.vhd(102): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 
 } {} {}}

@@ -33,27 +33,30 @@ architecture ALU_Arch of ALU is
 			shamt:	in std_logic_vector(4 downto 0);
 			dataout: out std_logic_vector(31 downto 0));
 	end component shift_register;
-	SIGNAL addsub_out, or_out, and_out, shift_out, immidiate_val: std_logic_vector(31 downto 0);
-	SIGNAL carry: std_logic;
+	SIGNAL op1,op2, op3, op4, op5, op6, op7: std_logic_vector(31 downto 0);
 
 
 begin
-	ADD_SUB: adder_subtracter PORT MAP(DataIn1, DataIn2, ALUCtrl(2), addsub_out, carry);
-	SHIFT: shift_register PORT MAP(DataIn1, ALUCtrl(2), DataIn2(4 downto 0), shift_out);
-	or_out <= DataIn1 or DataIn2;
-	and_out <= DataIn1 and DataIn2;
+
+
 
 	-- Add ALU VHDL implementation here
+	
+	add: adder_subtracter port map (DataIn1, DataIn2, '0',op1, Zero);
+	addi: adder_subtracter port map (DataIn1, DataIn2, '0',op2, Zero);
+	sub: adder_subtracter port map (DataIn1, DataIn2, '1',op3, Zero);
+	sllr: shift_register port map (DataIn1, '0', DataIn2( 4 downto 0),op4);
+	slli: shift_register port map (DataIn1, '0',DataIn2( 4 downto 0),op5);
+	srlr: shift_register port map (DataIn1,  '1',DataIn2( 4 downto 0),op6);
+	srli: shift_register port map (DataIn1, '1',DataIn2( 4 downto 0),op7);
 
-	immidiate_val <= addsub_out when ALUCtrl(3 downto 0) = "0010" or ALUCtrl (3 downto 0) = "0110" else
-			shift_out when ALUCtrl(3 downto 0) = "0011" or ALUCtrl(3 downto 0) = "0100" else
-			and_out when ALUCtrl(3 downto 0) = "0000" else DataIn2 when ALUCtrl(3 downto 0) = "1111";
-
-	ALUResult <= immidiate_val;
-	with immidiate_val select
-		Zero <= '1' when x"00000000",
-		'0' when others;
-
+	 with ALUCtrl select
+		ALUResult <= op1 when "00000",op2 when "00001", op3 when "00010",
+		DataIn1 or Datain2 when "00011", DataIn1 or Datain2 when "00100", 
+		DataIn1 and Datain2 when "00101", DataIn1 and Datain2 when "00110",
+		op4 when "00111", op5 when "01000", op6 when "01001", op7 when "01010",
+		X"00000000" when others;
+  
 end architecture ALU_Arch;
 
 
