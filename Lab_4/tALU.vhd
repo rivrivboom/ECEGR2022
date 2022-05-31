@@ -68,7 +68,7 @@ BEGIN
 		control <= "00110";
 		wait for 100ns;
 
-		datain_b <= X"FEFEFEFE"; --and
+		datain_b <= X"FFFFFFFF"; --and
 		control <= "00101";
 		wait for 100ns;
 
