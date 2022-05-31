@@ -52,62 +52,57 @@ BEGIN
 		-- Start testing the ALU
 		datain_a <= X"01234567";	-- DataIn in hex
 		datain_b <= X"11223344";
-		control  <= "00000";		-- Control in binary (ADD and ADDI test)
-		wait for 20 ns;
-			 			-- result = 0x124578AB  and zeroOut = 0
+		control  <= "00010";		-- Control in binary (ADD and ADDI test)
+		wait for 100 ns; 			-- result = 0x124578AB  and zeroOut = 0
 
-		control <= "00001"; --addi
-		wait for 100ns;
-		
-		datain_a <= X"01234567"; --sub
-		datain_b <= X"11223344";
-		control <= "00010";
-		wait for 100ns;
+		control <= "10010";		--ADDI test
+		wait for 100 ns;
 
-		datain_a <= X"11223344"; --subzero finisher
-		control <= "00110";
-		wait for 100ns;
+		datain_a <= x"01234567";
+		datain_b <= x"11223344";
+		control <= "00110";		--SUB test
+		wait for 100 ns;			--result = 0xF0011223 and zeroOut = 0
 
-		datain_b <= X"FFFFFFFF"; --and
-		control <= "00101";
-		wait for 100ns;
+		datain_a <= x"11223344";
+		control <= "00110";		--SUB test with zero result
+		wait for 100 ns;			--result = 0x00000000 and zeroOut = 1
 
+		datain_b <= x"FFFFFFFF";
+		control <= "00000";		--AND test
+		wait for 100 ns;			--result = 0x11223344 and zeroOut = 0
 
-		control <= "00110"; --andi
-		wait for 100ns;
-		
-		datain_a <= X"11001100"; --or
-		datain_b <= X"11110011";
-		control <="00011";
-		wait for 100ns;
+		control <= "10000";		--ANDI test
+		wait for 100 ns;
 
-		control <= "00100";--ori
-		wait for 100ns;
+		datain_a <= x"50505050";
+		datain_b <= x"05050505";
+		control <= "00001";		--OR test
+							--result = 0x55555555
+		wait for 100 ns;
 
-		datain_a <= X"CBACBDFF"; --sll
-		datain_b <= X"00000001";
-		control <= "00111";
-		wait for 100ns;
-		
-		control <= "01000"; --slli
-		wait for 100ns;
-			
-		control <= "01001"; --srl
-		wait for 100ns;
+		control <= "10001";		--ORI test
+		wait for 100 ns;
 
-		control <= "01010"; --srli
-		wait for 100ns;
+		datain_a <= x"FFAABBCC";
+		datain_b <= x"00000002";	--sll test
+		control <= "00011";			--result = 0xFEAAEF30
+		wait for 100 ns;
 
-		control <= "01011"; --pass
-		wait for 100ns;
-		
-		
+		control <= "10011";		--slli test
+		wait for 100 ns;
 
-		
-		-- Add test cases here to drive the ALU implementation
+		control <= "00100";		--srl test
+		wait for 100 ns;			--result = 0x3FEAAEF3
+
+		control <= "10100";		--srli test
+		wait for 100 ns;
+
+		control <= "11111";		--Pass through
+		wait for 100 ns;			--result = 0x00000002
 
 
 		wait; -- will wait forever
 	END PROCESS;
 
 END;
+

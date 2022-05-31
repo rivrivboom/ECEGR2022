@@ -33,30 +33,31 @@ architecture ALU_Arch of ALU is
 			shamt:	in std_logic_vector(4 downto 0);
 			dataout: out std_logic_vector(31 downto 0));
 	end component shift_register;
-	SIGNAL op1,op2, op3, op4, op5, op6, op7: std_logic_vector(31 downto 0);
 
-
+	SIGNAL add_sub_out, or_out, and_out, shift_out, intermediate: std_logic_vector(31 downto 0);
+	SIGNAL carry_out: std_logic;
 begin
+	ADD_SUB: adder_subtracter PORT MAP(DataIn1, DataIn2, ALUCtrl(2), add_sub_out, carry_out);
+	SHIFT: shift_register PORT MAP(DataIn1, ALUCtrl(2), DataIn2(4 downto 0), shift_out);
+	or_out <= DataIn1 OR DataIn2;
+	and_out <= DataIn1 AND DataIn2;
 
-
-
-	-- Add ALU VHDL implementation here
+	--Mux output select
+	intermediate <= add_sub_out WHEN ALUCtrl(3 downto 0) = "0010" OR ALUCtrl(3 downto 0) = "0110" ELSE
+		     shift_out WHEN ALUCtrl(3 downto 0) = "0011" OR ALUCtrl(3 downto 0) = "0100" ELSE
+		     or_out WHEN ALUCtrl(3 downto 0) = "0001" ELSE
+		     and_out WHEN ALUCtrl(3 downto 0) = "0000" ELSE
+		     DataIn2 WHEN ALUCtrl(3 downto 0) = "1111";
 	
-	add: adder_subtracter port map (DataIn1, DataIn2, '0',op1, Zero);
-	addi: adder_subtracter port map (DataIn1, DataIn2, '0',op2, Zero);
-	sub: adder_subtracter port map (DataIn1, DataIn2, '1',op3, Zero);
-	sllr: shift_register port map (DataIn1, '0', DataIn2( 4 downto 0),op4);
-	slli: shift_register port map (DataIn1, '0',DataIn2( 4 downto 0),op5);
-	srlr: shift_register port map (DataIn1,  '1',DataIn2( 4 downto 0),op6);
-	srli: shift_register port map (DataIn1, '1',DataIn2( 4 downto 0),op7);
+	ALUResult <= intermediate;
 
-	 with ALUCtrl select
-		ALUResult <= op1 when "00000",op2 when "00001", op3 when "00010",
-		DataIn1 or Datain2 when "00011", DataIn1 or Datain2 when "00100", 
-		DataIn1 and Datain2 when "00101", DataIn1 and Datain2 when "00110",
-		op4 when "00111", op5 when "01000", op6 when "01001", op7 when "01010",
-		X"00000000" when others;
-  
+	WITH intermediate SELECT
+		Zero <= '1' WHEN x"00000000",
+			'0' WHEN OTHERS;
+
 end architecture ALU_Arch;
+
+
+
 
 
