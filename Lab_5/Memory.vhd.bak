@@ -94,7 +94,7 @@ begin
 		"10000000" when WriteReg = "10001" and WriteCmd = '1' else
 		"00000000";
  	RegOrg: for i in 7 downto 0 generate
-		Ai: register32 port map (WriteData, '0', '1', '1', write_In(i), '0', '0',  regData(i));
+		Ai: register32 port map (WriteData, '0', '1', '1', regWrite(i), '0', '0',  regData(i));
 	end generate;
 	
 	with ReadReg1 select
