@@ -1,0 +1,13 @@
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 1 2 6 @_opt1 2 10 vopt0jxdet 1 8192 0 259
+21 89 UPDATE mainfiles SET time=strftime('%s','now'),size=?,flags=? WHERE auxid=? AND fileid=?; 4 1 191808 0 259 0 4 0 1
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 2 2 6 @_opt1 2 10 voptjgbw83 1 3872 0 259
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 3 2 6 @_opt1 2 10 vopthrnchv 1 8192 0 259
+21 89 UPDATE mainfiles SET time=strftime('%s','now'),size=?,flags=? WHERE auxid=? AND fileid=?; 4 1 162192 0 259 0 4 0 3
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 4 2 6 @_opt1 2 10 vopt4n4vb4 1 1244 0 259
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 5 2 6 @_opt1 2 10 voptah0r0n 1 8192 0 259
+21 89 UPDATE mainfiles SET time=strftime('%s','now'),size=?,flags=? WHERE auxid=? AND fileid=?; 4 1 101824 0 259 0 4 0 5
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 6 2 6 @_opt1 2 10 voptxee6vy 1 1041 0 259
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 7 2 6 @_opt1 2 10 vopt3aa3gg 1 8192 0 259
+21 89 UPDATE mainfiles SET time=strftime('%s','now'),size=?,flags=? WHERE auxid=? AND fileid=?; 4 1 20528 0 259 0 4 0 7
+3 118 INSERT OR REPLACE INTO mainfiles (auxid,fileid,duname,name,size,time,flags) VALUES (?,?,?,?,?,strftime('%s','now'),?); 6 0 4 0 8 2 6 @_opt1 2 10 voptn7rhas 1 384 0 259
+25 125 INSERT OR REPLACE INTO meta (key,value1,value2) VALUES (?,?,IFNULL((SELECT value2 FROM meta WHERE key=? AND value1=?), 0)+?); 5 2 12 page_inserts 0 4 2 12 page_inserts 0 4 0 64
