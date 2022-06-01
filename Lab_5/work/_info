@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s99 nomlopt
 !s11e vcom 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -9,6 +10,17 @@ z2
 !i10f 100
 cModel Technology
 dC:/modeltech64_2021.2/examples
+T_opt
+!s110 1654061139
+VDkdhNRc`FZ`]5SC4mW[O71
+04 3 9 work ram staticram 2
+04 11 8 work tmemory_vhd behavior 1
+=1-005056b343c0-6296f852-9f-764
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
 Eadder_subtracter
 Z0 w1652130384
 Z1 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
@@ -181,12 +193,12 @@ R2
 R3
 R4
 R5
-Z24 DEx4 work 3 ram 0 22 Nc@NT[?`T^`5=oR;nc;z_2
+DEx4 work 3 ram 0 22 Nc@NT[?`T^`5=oR;nc;z_2
 !i122 12
 l26
-Z25 L21 35
-Z26 V68gikCBH3[7j1eb20FD6j1
-Z27 !s100 QNz5nWCF8nkfm^BRg_]Q70
+L21 35
+V68gikCBH3[7j1eb20FD6j1
+!s100 QNz5nWCF8nkfm^BRg_]Q70
 R9
 32
 R20
@@ -386,7 +398,7 @@ R13
 R14
 R15
 Etmemory_vhd
-Z28 w1653685812
+Z24 w1653685812
 R1
 R2
 R3
@@ -394,8 +406,8 @@ R4
 R5
 !i122 4
 R6
-Z29 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd
-Z30 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd
+Z25 8C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd
+Z26 FC:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd
 l0
 R19
 Vif5Y=^]Ec:KR3FkV4F[JZ3
@@ -405,8 +417,8 @@ R9
 R10
 !i10b 1
 R11
-Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd|
-Z32 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd|
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd|
+Z28 !s107 C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/tMemory.vhd|
 !i113 0
 R14
 R15
@@ -427,8 +439,8 @@ R9
 R10
 !i10b 1
 R11
-R31
-R32
+R27
+R28
 !i113 0
 R14
 R15
