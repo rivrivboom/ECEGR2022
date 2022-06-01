@@ -44,65 +44,60 @@ BEGIN
 	
 
 	tb : PROCESS
-	BEGIN
+BEGIN
 
 		-- Wait 100 ns for global reset to finish
 		wait for 100 ns;
 
 		-- Start testing the ALU
+
+		--add
 		datain_a <= X"01234567";	-- DataIn in hex
 		datain_b <= X"11223344";
-		control  <= "00010";		-- Control in binary (ADD and ADDI test)
-		wait for 100 ns; 			-- result = 0x124578AB  and zeroOut = 0
+		control  <= "0000X";		-- Control in binary )
+		
+		wait for 20 ns; 			
 
-		control <= "10010";		--ADDI test
-		wait for 100 ns;
+		--sub
+		datain_a <= X"ABABABAB";	-- DataIn in hex
+		datain_b <= X"11223344";
+		control  <= "0001X";		-- Control in binary
+		
+		wait for 20 ns; 			
 
-		datain_a <= x"01234567";
-		datain_b <= x"11223344";
-		control <= "00110";		--SUB test
-		wait for 100 ns;			--result = 0xF0011223 and zeroOut = 0
+	 			
+		--and
+		datain_b <= X"FFFFFFFF" ;	-- DataIn in binary
+		control  <= "0010X";		-- Control in binary 
+		
+		wait for 20 ns; 			
 
-		datain_a <= x"11223344";
-		control <= "00110";		--SUB test with zero result
-		wait for 100 ns;			--result = 0x00000000 and zeroOut = 1
+		
 
-		datain_b <= x"FFFFFFFF";
-		control <= "00000";		--AND test
-		wait for 100 ns;			--result = 0x11223344 and zeroOut = 0
-
-		control <= "10000";		--ANDI test
-		wait for 100 ns;
-
-		datain_a <= x"50505050";
-		datain_b <= x"05050505";
-		control <= "00001";		--OR test
-							--result = 0x55555555
-		wait for 100 ns;
-
-		control <= "10001";		--ORI test
-		wait for 100 ns;
-
-		datain_a <= x"FFAABBCC";
-		datain_b <= x"00000002";	--sll test
-		control <= "00011";			--result = 0xFEAAEF30
-		wait for 100 ns;
-
-		control <= "10011";		--slli test
-		wait for 100 ns;
-
-		control <= "00100";		--srl test
-		wait for 100 ns;			--result = 0x3FEAAEF3
-
-		control <= "10100";		--srli test
-		wait for 100 ns;
-
-		control <= "11111";		--Pass through
-		wait for 100 ns;			--result = 0x00000002
+		--or
+		datain_a <= X"11110011";	-- DataIn in binary
+		datain_b <= X"11001100";
+		control  <= "011XX";		-- Control in binary 
+		
+		wait for 20 ns; 			
 
 
-		wait; -- will wait forever
-	END PROCESS;
+		--sll
+		datain_a <= X"CBACBDFF";	-- DataIn in hex
+		datain_b <= X"00000002";
+		control  <= "0010X";		-- Control in binary
+		
+		wait for 20 ns; 			-- result = 0x00000008  and zeroOut = 0
 
-END;
 
+		--srl
+		control  <= "0011X";		-- Control in binary 
+		
+		wait for 20 ns; 			-- result = 0x00000001  and zeroOut = 0
+
+		control <= "1XXXX";
+		wait for 20 ns; 			-- result = 0x00000001  and zeroOut = 0
+
+		wait;
+	end process;
+end;

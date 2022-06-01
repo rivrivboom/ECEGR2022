@@ -45,62 +45,59 @@ BEGIN
 
 	tb : PROCESS
 BEGIN
+
 		-- Wait 100 ns for global reset to finish
 		wait for 100 ns;
 
 		-- Start testing the ALU
-		-- control(4 downto 3) mux for: arith, shift, and, or
-		-- control(2) add/shift left if 0, subtract/shift right if 1
-		-- control(1 downto 0) shift by x bits
 
-		-- Testing addition
-		control  <= "0000X";		-- Control in binary (ADD and ADDI test)
+		--add
 		datain_a <= X"01234567";	-- DataIn in hex
 		datain_b <= X"11223344";
-		wait for 20 ns; 
-		-- Expected output: result = 0x124578AB, zeroOut = 0
+		control  <= "0000X";		-- Control in binary )
+		
+		wait for 20 ns; 			
 
-		-- Testing subtraction
-		control <="0001X";
-		datain_a <= X"01234567";
+		--sub
+		datain_a <= X"ABABABAB";	-- DataIn in hex
 		datain_b <= X"11223344";
-		wait for 20 ns;
-		-- Expected output: result = 0xF0011223, zeroOut = 0
+		control  <= "0001X";		-- Control in binary
+		
+		wait for 20 ns; 			
 
-		-- Testing 2-bit leftward shift
-		control <="0010X";
+	--	wait for 20 ns; 			
+		--and
+		datain_b <= X"FFFFFFFF" ;	-- DataIn in binary
+		control  <= "0010X";		-- Control in binary 
+		
+		wait for 20 ns; 			
+
+		
+
+		--or
+		datain_a <= X"11110011";	-- DataIn in binary
+		datain_b <= X"11001100";
+		control  <= "011XX";		-- Control in binary 
+		
+		wait for 20 ns; 			
+
+
+		--sll
+		datain_a <= X"CBACBDFF";	-- DataIn in hex
 		datain_b <= X"00000002";
-		wait for 20 ns;
-		-- Expected output: result = 0x048D159C, zeroOut = 0
+		control  <= "0010X";		-- Control in binary
+		
+		wait for 20 ns; 			-- result = 0x00000008  and zeroOut = 0
 
-		-- Testing 2-bit rightward shift
-		control <="0011X";
-		wait for 20 ns;
-		-- Expected output: result = 0x0048D159, zeroOut = 0
 
-		-- Testing AND operation
-		control <="010XX";
-		datain_b <= X"11223344";
-		wait for 20 ns;
-		-- Expected output: result = 0x01220144, zeroOut = 0
+		--srl
+		control  <= "0011X";		-- Control in binary 
+		
+		wait for 20 ns; 			-- result = 0x00000001  and zeroOut = 0
 
-		-- Testing OR operation
-		control <="011XX";
-		wait for 20 ns;
-		-- Expected output: result = 0x11237767, zeroOut = 0
+		control <= "1XXXX";
+		wait for 20 ns; 			-- result = 0x00000001  and zeroOut = 0
 
-		-- Testing datainb bypass
-		control <="1XXXX";
-		datain_b <= X"01234567";
-		wait for 20 ns;
-		-- Expected output: result = 0x01234567, zeroOut = 0
-
-		-- Testing zero output
-		datain_b <= X"00000000";
-		wait for 20 ns;
-		-- Expected output: result = 0x0, zeroOut = 1
-
-		wait; -- will wait forever
-	END PROCESS;
-
-END;
+		wait;
+	end process;
+end;

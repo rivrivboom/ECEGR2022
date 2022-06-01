@@ -34,26 +34,55 @@ architecture ALU_Arch of ALU is
 			dataout: out std_logic_vector(31 downto 0));
 	end component shift_register;
 
-	SIGNAL add_sub_out, or_out, and_out, shift_out, intermediate: std_logic_vector(31 downto 0);
-	SIGNAL carry_out: std_logic;
-begin
-	ADD_SUB: adder_subtracter PORT MAP(DataIn1, DataIn2, ALUCtrl(2), add_sub_out, carry_out);
-	SHIFT: shift_register PORT MAP(DataIn1, ALUCtrl(2), DataIn2(4 downto 0), shift_out);
-	or_out <= DataIn1 OR DataIn2;
-	and_out <= DataIn1 AND DataIn2;
+	SIGNAL carry : std_logic;
+	SIGNAL addsub_out : std_logic_vector(31 DOWNTO 0);
+	SIGNAL shift_out : std_logic_vector(31 DOWNTO 0);
 
-	--Mux output select
-	intermediate <= add_sub_out WHEN ALUCtrl(3 downto 0) = "0010" OR ALUCtrl(3 downto 0) = "0110" ELSE
-		     shift_out WHEN ALUCtrl(3 downto 0) = "0011" OR ALUCtrl(3 downto 0) = "0100" ELSE
-		     or_out WHEN ALUCtrl(3 downto 0) = "0001" ELSE
-		     and_out WHEN ALUCtrl(3 downto 0) = "0000" ELSE
-		     DataIn2 WHEN ALUCtrl(3 downto 0) = "1111";
 	
-	ALUResult <= intermediate;
+	SIGNAL output_reg: std_logic_vector(31 DOWNTO 0);
 
-	WITH intermediate SELECT
-		Zero <= '1' WHEN x"00000000",
-			'0' WHEN OTHERS;
+	--SIGNAL operation_select :STD_LOGIC;
+	
+begin
+--orignal slow breakdown to make this work 
+--	WITH ALUCtrl SELECT
+	--operation_select <= '0' WHEN "00000", --ADD
+	--	'1' WHEN "00001", --SUB
+	--	'0' WHEN "00010", --ADDI
+--		'0' WHEN "00011", --AND
+		--'0' WHEN "00100", --ANDI
+	--	'0' WHEN "00101", --OR
+	--	'0' WHEN "00110", --ORI
+	--	'0' WHEN "00111", --sll
+	--	'0' WHEN "01000", --slli
+	--	'1' WHEN "01001", -- srl
+	--	'1' WHEN "01110",		 --srli
+	--	'1' WHEN OTHERS;
+	
+--now simplified
+	A0:adder_subtracter PORT MAP (DataIn1, DataIn2, ALUCtrl(1), addsub_out, carry);
+	--Sll, SLLI, SRL, SRLI
+	A3:shift_register PORT MAP(DataIn1, ALUCtrl(1), DataIn2(4 Downto 0), shift_out);
+	
+	WITH ALUCtrl(4 downto 2) SELECT
+	output_reg <= addsub_out WHEN "000", --ADD
+		--addsub_out WHEN "00001", --SUB
+		--addsub_out WHEN "00010", --ADDI
+		(DataIn1 AND DataIn2) WHEN "010", --AND
+		--(DataIn1 AND DataIn2) WHEN "00100", --ANDI
+		(DataIn1 OR DataIn2) WHEN "011", --OR
+		--(DataIn1 OR DataIn2) WHEN "00110", --ORI
+		shift_out WHEN "001", --SLL
+		--shift_out WHEN "01000", --SLLI
+		--shift_out WHEN "01001", --SRL
+		--shift_out WHEN "01110", --SRLI
+		DataIn2 WHEN OTHERS;
+	
+	Zero <= '1' WHEN output_reg = X"00000000" ELSE '0';
+
+	ALUResult <= output_reg;
+
+	
 
 end architecture ALU_Arch;
 
