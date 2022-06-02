@@ -80,11 +80,12 @@ architecture remember of Registers is
 	end component;
 	
 	signal write_In : std_logic_vector (7 downto 0);
-	signal x0_out: std_logic_vector(31 downto 0);
+	--signal x0_out: std_logic_vector (31 downto 0);
 	type dataArray is Array(7 downto 0) of std_logic_vector(31 downto 0);
 	signal regData: dataArray;
 	
 begin
+	constant x0_out : x0 <= X"00000000";
 	write_In <= "00000001" when WriteReg = "01010" and WriteCmd = '1' else
 		"00000010" when WriteReg = "01011" and WriteCmd = '1' else
 		"00000100" when WriteReg = "01100" and WriteCmd = '1' else
@@ -93,12 +94,11 @@ begin
 		"00100000" when WriteReg = "01111" and WriteCmd = '1' else
 		"01000000" when WriteReg = "10000" and WriteCmd = '1' else
 		"10000000" when WriteReg = "10001" and WriteCmd = '1' else
-		"00000000" ;
+		"00000000";
 
  	RegOrg: for i in 7 downto 0 generate
 		Ai: register32 port map (WriteData, '0', '1', '1', write_In(i), '0', '0',  regData(i));
 	end generate;
-		x0 : register32 port map(WriteData, '0', '0', '0', "00000000", '0', '0', x0_out);
 	
 	
 	with ReadReg1 select
@@ -110,7 +110,7 @@ begin
 			regData(5) when "01111",
 			regData(6) when "10000",
 			regData(7) when "10001",
-			(others => '0' ) when "00000",
+			x0 when "00000",
 			(others => 'Z') when others;
 
 	with ReadReg2 select
@@ -122,7 +122,7 @@ begin
 			regData(5) when "01111",
 			regData(6) when "10000",
 			regData(7) when "10001",
-			(others => '0' ) when "00000",
+			(others => '0') when "00000",
 			(others => 'Z') when others;
 
 end remember;

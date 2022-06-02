@@ -89,7 +89,7 @@ BEGIN
 
 		oe  <= '0';
 		
-		address <= X"00000001";
+		address <= X"00000014";
 		dataIn  <= X"ABCDEF12";
 		we      <= '1';
 		clock <= '1';
@@ -192,11 +192,19 @@ BEGIN
 		clock <= '0';
 		wait for 5 ns;
 
+		readReg2 <= "00000";
+		clock <= '1';
+		wait for 5 ns;
+		clock <= '0';
+		wait for 5 ns;
+
 		address <= X"00000200";
 		clock <= '1';
 		wait for 5 ns;
 		clock <= '0';
 		wait for 5 ns;
+		
+
 
 		-- Register Bank tests
 		dataIn   <= X"11111111";
@@ -233,6 +241,13 @@ BEGIN
 		wait for 5 ns;	
 		writeCmd <= '0';
 		wait for 5 ns;	
+		
+		dataIn <= X"12345678";
+		writeReg <= "00000";
+		writeCmd <= '1';
+		wait for 5 ns;
+		writeCmd <= '0';
+		wait for 5 ns;
 
 		dataIn   <= X"66666666";
 		writeReg <= "01111";
