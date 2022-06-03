@@ -52,9 +52,11 @@ BEGIN
 		-- Start testing the ALU
 
 		--add
+		control  <= "0000X";	
 		datain_a <= X"01234567";	-- DataIn in hex
 		datain_b <= X"11223344";
-		control  <= "0000X";		-- Control in binary )
+
+		--result;	-- Control in binary )
 		
 		wait for 20 ns; 			
 

@@ -54,7 +54,8 @@ BEGIN
 		--add
 		datain_a <= X"01234567";	-- DataIn in hex
 		datain_b <= X"11223344";
-		control  <= "0000X";		-- Control in binary )
+		control  <= "0000X";	
+		result;	-- Control in binary )
 		
 		wait for 20 ns; 			
 
@@ -65,7 +66,7 @@ BEGIN
 		
 		wait for 20 ns; 			
 
-	--	wait for 20 ns; 			
+	 			
 		--and
 		datain_b <= X"FFFFFFFF" ;	-- DataIn in binary
 		control  <= "0010X";		-- Control in binary 

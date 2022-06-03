@@ -78,7 +78,7 @@ begin
 		--shift_out WHEN "01110", --SRLI
 		DataIn2 WHEN OTHERS;
 	
-	Zero <= '1' WHEN output_reg = X"00000000" ELSE '0';
+	Zero <= '1' WHEN output_reg = X"0000" ELSE '0';
 
 	ALUResult <= output_reg;
 

@@ -44,7 +44,7 @@ architecture ALU_Arch of ALU is
 	--SIGNAL operation_select :STD_LOGIC;
 	
 begin
-
+--orignal slow breakdown to make this work 
 --	WITH ALUCtrl SELECT
 	--operation_select <= '0' WHEN "00000", --ADD
 	--	'1' WHEN "00001", --SUB
@@ -59,7 +59,7 @@ begin
 	--	'1' WHEN "01110",		 --srli
 	--	'1' WHEN OTHERS;
 	
-
+--now simplified
 	A0:adder_subtracter PORT MAP (DataIn1, DataIn2, ALUCtrl(1), addsub_out, carry);
 	--Sll, SLLI, SRL, SRLI
 	A3:shift_register PORT MAP(DataIn1, ALUCtrl(1), DataIn2(4 Downto 0), shift_out);
