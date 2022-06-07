@@ -1,0 +1,141 @@
+{C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/InstrMemory.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/InstrMemory.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity InstructionRAM
+-- Compiling architecture instrucRAM of InstructionRAM
+
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_3/registers.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity bitstorage
+-- Compiling architecture memlike of bitstorage
+-- Compiling entity fulladder
+-- Compiling architecture addlike of fulladder
+-- Compiling entity register8
+-- Compiling architecture memmy of register8
+-- Compiling entity register32
+-- Compiling architecture biggermem of register32
+-- Compiling entity adder_subtracter
+-- Compiling architecture calc of adder_subtracter
+-- Compiling entity shift_register
+-- Compiling architecture shifter of shift_register
+
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/ProcElements.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/ProcElements.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity BusMux2to1
+-- Compiling architecture selection of BusMux2to1
+-- Compiling entity Control
+-- Compiling architecture Boss of Control
+-- Compiling entity ProgramCounter
+-- Compiling architecture executive of ProgramCounter
+
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/tProcessor.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_6/tProcessor.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity tProcessor_vhd
+-- Compiling architecture behavior of tProcessor_vhd
+
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_4/ALU.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity ALU
+-- Compiling architecture ALU_Arch of ALU
+
+} {} {}} {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd} {2 {vcom -work work -2002 -explicit -vopt -stats=none {C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd}
+Model Technology ModelSim SE-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity RAM
+-- Compiling architecture staticRAM of RAM
+-- Compiling entity Registers
+-- Compiling architecture remember of Registers
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(96): (vcom-1152) Index value 8 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(97): (vcom-1152) Index value 9 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(98): (vcom-1152) Index value 10 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(99): (vcom-1152) Index value 11 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(100): (vcom-1152) Index value 12 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(101): (vcom-1152) Index value 13 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(102): (vcom-1152) Index value 14 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(103): (vcom-1152) Index value 15 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(104): (vcom-1152) Index value 16 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(105): (vcom-1152) Index value 17 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(106): (vcom-1152) Index value 18 is out of index range 7 downto 0 of ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(122): (vcom-1152) Index value 8 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(123): (vcom-1152) Index value 9 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(124): (vcom-1152) Index value 10 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(125): (vcom-1152) Index value 11 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(126): (vcom-1152) Index value 12 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(127): (vcom-1152) Index value 13 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(128): (vcom-1152) Index value 14 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(129): (vcom-1152) Index value 15 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(130): (vcom-1152) Index value 16 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(131): (vcom-1152) Index value 17 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(132): (vcom-1152) Index value 18 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(133): (vcom-1152) Index value 19 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(134): (vcom-1152) Index value 20 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(135): (vcom-1152) Index value 21 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(136): (vcom-1152) Index value 22 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(137): (vcom-1152) Index value 23 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(138): (vcom-1152) Index value 24 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(139): (vcom-1152) Index value 25 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(140): (vcom-1152) Index value 26 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(141): (vcom-1152) Index value 27 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(142): (vcom-1152) Index value 28 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(143): (vcom-1152) Index value 29 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(144): (vcom-1152) Index value 30 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(145): (vcom-1152) Index value 31 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(157): (vcom-1152) Index value 8 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(158): (vcom-1152) Index value 9 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(159): (vcom-1152) Index value 10 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(160): (vcom-1152) Index value 11 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(161): (vcom-1152) Index value 12 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(162): (vcom-1152) Index value 13 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(163): (vcom-1152) Index value 14 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(164): (vcom-1152) Index value 15 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(165): (vcom-1152) Index value 16 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(166): (vcom-1152) Index value 17 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(167): (vcom-1152) Index value 18 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(168): (vcom-1152) Index value 19 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(169): (vcom-1152) Index value 20 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(170): (vcom-1152) Index value 21 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(171): (vcom-1152) Index value 22 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(172): (vcom-1152) Index value 23 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(173): (vcom-1152) Index value 24 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(174): (vcom-1152) Index value 25 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(175): (vcom-1152) Index value 26 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(176): (vcom-1152) Index value 27 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(177): (vcom-1152) Index value 28 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(178): (vcom-1152) Index value 29 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(179): (vcom-1152) Index value 30 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+** Warning: C:/Users/riveraadrian/OneDrive - Seattle University/Documents/github backup/ECEGR2022/Lab_5/Memory.vhd(180): (vcom-1152) Index value 31 is out of index range 7 downto 0 of work.Registers(remember).dataArray.
+
+} {} {}}
