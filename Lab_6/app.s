@@ -29,5 +29,7 @@ line2:
 	lw   a7, 8(a1)
 stop:	
 	beq  zero, zero, stop
+	
+	
 
 # END OF PROGRAM
