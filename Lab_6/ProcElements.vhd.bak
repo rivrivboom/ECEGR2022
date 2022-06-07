@@ -74,7 +74,7 @@ begin
 		"10"  when opcode = "1100011" else
 		"11";
 
-	RegWrite <= '1' when (opcode = "0110111" or opcode = "0000011" or opcode = "0010011" or opcode = "0110011") and clk = '0' else
+	RegWrite <= '1' when (opcode = "0110111" or opcode = "0000011" or opcode = "0010011" or opcode "0110011") and clk = '0' else
 		'0';
 	MemWrite <= '1' when opcode = "0100011" else
 		'0';
