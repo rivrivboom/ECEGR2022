@@ -86,7 +86,7 @@ architecture remember of Registers is
 	
 begin
 
-	write_In <= (<= "00000001" WHEN WriteReg = "01010" AND WriteCmd = '1' ELSE
+	write_In <= "00000001" WHEN WriteReg = "01010" AND WriteCmd = '1' ELSE
 		    "00000010" WHEN WriteReg ="01011" AND WriteCmd = '1' ELSE
 		    "00000100" WHEN WriteReg ="01100" AND WriteCmd = '1' ELSE
 	  	    "00001000" WHEN WriteReg ="01101" AND WriteCmd = '1' ELSE

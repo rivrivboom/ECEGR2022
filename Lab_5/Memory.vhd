@@ -79,54 +79,85 @@ architecture remember of Registers is
 		 dataout: out std_logic_vector(31 downto 0));
 	end component;
 	
-	signal write_In : std_logic_vector (7 downto 0);
-	--signal x0_out: std_logic_vector (31 downto 0);
-	type dataArray is Array(7 downto 0) of std_logic_vector(31 downto 0);
-	signal regData: dataArray;
-	
+SIGNAL regWrite: std_logic_vector(31 downto 1);
+	TYPE dataArray is Array(31 downto 1) of std_logic_vector(31 downto 0);
+	SIGNAL regData: dataArray := (OTHERS=>(OTHERS=>'0'));
 begin
 
-	write_In <= "00000001" WHEN WriteReg = "01010" AND WriteCmd = '1' ELSE
-		    "00000010" WHEN WriteReg ="01011" AND WriteCmd = '1' ELSE
-		    "00000100" WHEN WriteReg ="01100" AND WriteCmd = '1' ELSE
-	  	    "00001000" WHEN WriteReg ="01101" AND WriteCmd = '1' ELSE
-		    "00010000" WHEN WriteReg ="01110" AND WriteCmd = '1' ELSE
-		    "00100000" WHEN WriteReg = "01111" AND WriteCmd = '1' ELSE
-		    "01000000" WHEN WriteReg ="10000" AND WriteCmd = '1' ELSE
-		    "10000000" WHEN WriteReg ="10001" AND WriteCmd = '1' ELSE
-		    "00000000";
+	regWrite <= (1 => '1', OTHERS => '0') WHEN WriteReg = "00001" AND WriteCmd = '1' ELSE
+			(2 => '1', OTHERS => '0') WHEN WriteReg = "00010" AND WriteCmd = '1' ELSE
+			(3 => '1', OTHERS => '0') WHEN WriteReg = "00011" AND WriteCmd = '1' ELSE
+			(4 => '1', OTHERS => '0') WHEN WriteReg = "00100" AND WriteCmd = '1' ELSE
+			(5 => '1', OTHERS => '0') WHEN WriteReg = "00101" AND WriteCmd = '1' ELSE
+			(6 => '1', OTHERS => '0') WHEN WriteReg = "00110" AND WriteCmd = '1' ELSE
+			(7 => '1', OTHERS => '0') WHEN WriteReg = "00111" AND WriteCmd = '1' ELSE
+			(8 => '1', OTHERS => '0') WHEN WriteReg = "01000" AND WriteCmd = '1' ELSE
+			(9 => '1', OTHERS => '0') WHEN WriteReg = "01001" AND WriteCmd = '1' ELSE
+		    (10 => '1', OTHERS => '0') WHEN WriteReg ="01010" AND WriteCmd = '1' ELSE
+		    (11 => '1', OTHERS => '0') WHEN WriteReg ="01011" AND WriteCmd = '1' ELSE
+	  	    (12 => '1', OTHERS => '0') WHEN WriteReg ="01100" AND WriteCmd = '1' ELSE
+		    (13 => '1', OTHERS => '0') WHEN WriteReg ="01101" AND WriteCmd = '1' ELSE
+		    (14 => '1', OTHERS => '0') WHEN WriteReg = "01110" AND WriteCmd = '1' ELSE
+		    (15 => '1', OTHERS => '0') WHEN WriteReg ="01111" AND WriteCmd = '1' ELSE
+		    (16 => '1', OTHERS => '0') WHEN WriteReg ="10000" AND WriteCmd = '1' ELSE
+		(17 => '1', OTHERS => '0') WHEN WriteReg ="10001" AND WriteCmd = '1' ELSE
+		(18 => '1', OTHERS => '0') WHEN WriteReg ="10010" AND WriteCmd = '1' ELSE
 
- 	RegOrg: for i in 7 downto 0 generate
-		Ai: register32 port map (WriteData, '0', '1', '1', write_In(i), '0', '0',  regData(i));
-	end generate;
+
+		    (OTHERS => '0');
 	
 	
-	with ReadReg1 select
-		ReadData1 <= regData(0) WHEN "01010",
-			     regData(1) WHEN "01011",
-			     regData(2) WHEN "01100",
-			     regData(3) WHEN "01101",
-			     regData(4) WHEN "01110",
-			     regData(5) WHEN "01111",
-			     regData(6) WHEN "10000",
-                             regData(7) WHEN "10001",
-			     (OTHERS => '0') WHEN "00000",
-			     (Others => 'Z') WHEN OTHERS;
+	RegisterMap: FOR i in 31 downto 1 GENERATE
+		xi: register32 PORT MAP(WriteData, '0', '1', '1', regWrite(i), '0', '0', regData(i));
+	END GENERATE;
+		
+	WITH ReadReg1 SELECT
+		ReadData1 <= regData(1) WHEN "00001",
+				regData(2) WHEN "00010",
+				regData(3) WHEN "00011",
+				regData(4) WHEN "00100",
+				regData(5) WHEN "00101",
+				regData(6) WHEN "00110",
+				regData(7) WHEN "00111",
+				regData(8) WHEN "01000",
+				regData(9) WHEN "01001",
+				regData(10) WHEN "01010",
+				regData(11) WHEN "01011",
+				regData(12) WHEN "01100",
+				regData(13) WHEN "01101",
+				regData(14) WHEN "01110",
+				regData(15) WHEN "01111",
+				regData(16) WHEN "10000",
+				regData(17) WHEN "10001",
+				regData(18) WHEN "10010",
+			
 
+			    (OTHERS => '0') WHEN OTHERS;
 
-	with ReadReg2 select
-		ReadData2 <= regData(0) WHEN "01010",
-			     regData(1) WHEN "01011",
-			     regData(2) WHEN "01100",
-			     regData(3) WHEN "01101",
-			     regData(4) WHEN "01110",
-			     regData(5) WHEN "01111",
-			     regData(6) WHEN "10000",
-                             regData(7) WHEN "10001",
-			     (OTHERS => '0') WHEN "00000",
-			     (Others => 'Z') WHEN OTHERS;
+	WITH ReadReg2 SELECT
+		ReadData2 <= regData(1) WHEN "00001",
+					regData(2) WHEN "00010",
+					regData(3) WHEN "00011",
+					regData(4) WHEN "00100",
+					regData(5) WHEN "00101",
+					regData(6) WHEN "00110",
+					regData(7) WHEN "00111",
+					regData(8) WHEN "01000",
+					regData(9) WHEN "01001",
+					regData(10) WHEN "01010",
+					regData(11) WHEN "01011",
+					regData(12) WHEN "01100",
+					regData(13) WHEN "01101",
+					regData(14) WHEN "01110",
+					regData(15) WHEN "01111",
+					regData(16) WHEN "10000",
+					regData(17) WHEN "10001",
+					regData(18) WHEN "10010",
 
+					(OTHERS => '0') WHEN OTHERS;
 
 end remember;
+
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
